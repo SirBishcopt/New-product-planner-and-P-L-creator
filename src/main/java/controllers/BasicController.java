@@ -1,14 +1,12 @@
 package controllers;
 
 import domain.MarketingPlan;
+import domain.PAndLResults;
 import domain.Product;
 import domain.SalesPlan;
 import user_input.UserInputMarketingExample;
 import user_input.UserInputProductExample;
 import user_input.UserInputSalesExample;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BasicController {
 
@@ -24,8 +22,7 @@ public class BasicController {
         SalesPlan salesPlan = salesController.createSalesPlan();
 
         PAndLController pAndLController = new PAndLController(product,marketingPlan,salesPlan);
-        List <String> pAndLResults = new ArrayList<>();
-        pAndLResults = pAndLController.printPAndL();
+        PAndLResults pAndLResults = pAndLController.createPAndL();
 
     }
 }
