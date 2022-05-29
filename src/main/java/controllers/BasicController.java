@@ -3,6 +3,7 @@ package controllers;
 import domain.MarketingPlan;
 import domain.Product;
 import domain.SalesPlan;
+import user_input.UserInputMarketingExample;
 import user_input.UserInputProductExample;
 
 import java.util.ArrayList;
@@ -12,22 +13,14 @@ public class BasicController {
 
     public void start() {
 
-        System.out.println("First step, create product:");
-
         ProductController productController = new ProductController(new UserInputProductExample());
         Product product = productController.createProduct();
 
-        System.out.println("Second step, plan your marketing investment:");
-
-        MarketingController marketingController = new MarketingController();
+        MarketingController marketingController = new MarketingController(new UserInputMarketingExample());
         MarketingPlan marketingPlan = marketingController.createMarketingPlan();
-
-        System.out.println("Third step, plan your sales:");
 
         SalesController salesController = new SalesController();
         SalesPlan salesPlan = salesController.createSalesPlan();
-
-        System.out.println("Below you will find your Profit and Loss Statement:");
 
         PAndLController pAndLController = new PAndLController(product,marketingPlan,salesPlan);
         List <String> pAndLResults = new ArrayList<>();
