@@ -4,12 +4,12 @@ public class UserInputMarketingExample implements UserInputMarketing {
 
     @Override
     public String collectInvestmentsName() {
-        return null;
+        return "TV advertising";
     }
 
     @Override
     public int collectSpending() {
-        return 0;
+        return 500000;
     }
 
     @Override

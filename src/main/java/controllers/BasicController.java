@@ -5,6 +5,7 @@ import domain.Product;
 import domain.SalesPlan;
 import user_input.UserInputMarketingExample;
 import user_input.UserInputProductExample;
+import user_input.UserInputSalesExample;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ public class BasicController {
         MarketingController marketingController = new MarketingController(new UserInputMarketingExample());
         MarketingPlan marketingPlan = marketingController.createMarketingPlan();
 
-        SalesController salesController = new SalesController();
+        SalesController salesController = new SalesController(new UserInputSalesExample());
         SalesPlan salesPlan = salesController.createSalesPlan();
 
         PAndLController pAndLController = new PAndLController(product,marketingPlan,salesPlan);
